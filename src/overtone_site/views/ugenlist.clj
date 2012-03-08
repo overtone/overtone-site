@@ -30,7 +30,7 @@
                                           (= 1 (count cat)) (assoc cat "General")
                                           (= 0 (count cat)) "General")
                                           )))) 
-          (:categories spec)))))
+          (:categories spec))))
 
 
 (defpartial ugen-row

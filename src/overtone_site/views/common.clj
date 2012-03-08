@@ -33,8 +33,9 @@
         [:a.span1 {:href "/shop"} "shop"]
         [:a.span1 {:href "/about"} "about"]]]
     [:div.fluid-row
-      [:div.span9 
-        [:hr]]]
+      [:div.container]]
+    [:hr]
+    [:br]
       content
     )
   )

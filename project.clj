@@ -2,6 +2,7 @@
             :description "FIXME: write this!"
             :dependencies [[org.clojure/clojure "1.3.0"]
                            [noir "1.2.1"]
-                           [overtone "0.6.0"]]
+                           [overtone "0.6.0"]
+                           [org.clojure/clojure-contrib "1.1.0"]]
             :main overtone-site.server)
 
