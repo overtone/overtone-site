@@ -10,7 +10,7 @@
         	[:div.fluid-row
         		[:div.span6
         			[:br]
-					[:a {:href "/download"} [:h1 "Download Overtone"]]
+					[:a {:href "/https://github.com/overtone/overtone"} [:h1 "Download Overtone"]]
 					[:br]
 					[:a {:href "/try"} [:h1 "Try Overtone Online"]]
 					[:br]

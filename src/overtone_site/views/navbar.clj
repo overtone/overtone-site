@@ -5,7 +5,7 @@
         [hiccup.core :only [html]]))
 
 
-(defpartial navabar []
+(defpartial navbar []
 	[:div.navbar-inner
 		[:div.container-fluid
 			[:a.btn.btn-navbar{ :data-toggle  "collapse", :data-target  ".nav-collapse"}]

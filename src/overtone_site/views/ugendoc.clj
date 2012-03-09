@@ -4,8 +4,10 @@
      overtone-site.views.ugendoc
 (:require [overtone-site.views.common :as common]
           [noir.content.getting-started]
-          [overtone-site.models.webdocs :as docs])
-  (:use [overtone.util doc]
+          )
+  (:use 
+          [overtone-site.models.webdocs]
+    [overtone.util doc]
         [overtone.core]
         [overtone.sc.machinery.ugen defaults specs]
         [noir.core :only [defpage defpartial]]
@@ -24,7 +26,7 @@
 
 
 (defpartial doc-example [ugen] 
-    (docs/web-examples ugen))
+    (web-examples ugen))
 
 (defpartial doc-row [l r]
   [:div.row-fluid
@@ -74,8 +76,9 @@
 
                 (doc-row "categories" (categories-str ugen))
 
-
-                (doc-row "examples" (docs/web-examples :compander))]
+                [:br]
+                (doc-row "examples" (str  (web-examples)))
+                ]
 
 
                 )
