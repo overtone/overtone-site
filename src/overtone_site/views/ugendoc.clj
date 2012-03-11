@@ -4,6 +4,7 @@
      overtone-site.views.ugendoc
 (:require [overtone-site.views.common :as common]
           [noir.content.getting-started]
+          [clojure.repl :as repl]
           )
   (:use 
           [overtone-site.models.webdocs]
@@ -22,7 +23,7 @@
     [:div.span9 [:p (nth (nth (seq param-map) 0) 1)]]])
 
 
-; (defn- ns-publics-list [ns] (#(list (ns-name %) (map first (ns-publics %))) ns))
+(defn ns-publics-list [ns] (#(list (ns-name %) (map first (ns-publics %))) ns))
 
 
 (defpartial doc-example [ugen] 
@@ -33,7 +34,7 @@
     [:div.span2 [:strong.pull-right l]]
     [:div.span7 r]])
 
-(defpage "/ugendoc/:ugen-name" {:keys [ugen-name]}
+(defpage "/ugen-doc/:ugen-name" {:keys [ugen-name]}
 	(let [exists? (not (nil? (get-ugen ugen-name)))
         ugen    (get-ugen ugen-name)]
     (common/layout
@@ -43,11 +44,12 @@
                     [:p " "])]
         (if exists? 
           (do
-            [:div.container
-              (doc-row "name" [:h1 ugen-name])
+            [:div
+              (doc-row "name" [:h1#ugen-doc-title ugen-name])
+              [:br]
               (doc-row 
                 "syntax"
-                [:p (str "( " ) [:i ugen-name]
+                [:p (str "( " ) [:i#ugen-doc-args-title ugen-name]
                   (map 
                     (fn [[k v]] 
                       [:strong
@@ -62,7 +64,7 @@
                         (doc-row (str "&nbsp;")
                           [:div.container
                             [:div.span2 {:style "margin-left: 0px;"}
-                              [:p (str k)]]
+                              [:p [:i#ugen-doc-title (str k)]]]
                             [:div.span5
                               (str v)]])) 
                         (arg-doc-map ugen))
@@ -77,7 +79,8 @@
                 (doc-row "categories" (categories-str ugen))
 
                 [:br]
-                (doc-row "examples" (str  (web-examples)))
+
+                ; (doc-row "examples" (str  (web-examples)))
                 ]
 
 

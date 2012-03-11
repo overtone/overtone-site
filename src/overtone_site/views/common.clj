@@ -10,6 +10,7 @@
   (include-css "/css/styles.css"))
 
 (defpartial js [] 
+  (include-js "js/widgets.js")
   (include-js "js/jquery.js")
   (include-js "js/pretify.js")
   (include-js "bootstrap/js/basic/bootstrap-transition.js")
@@ -23,7 +24,8 @@
   (include-js "bootstrap/js/basic/bootstrap-button.js")
   (include-js "bootstrap/js/basic/bootstrap-collapse.js")
   (include-js "bootstrap/js/basic/bootstrap-carousel.js")
-  (include-js "bootstrap/js/basic/bootstrap-typeahead.js"))
+  (include-js "bootstrap/js/basic/bootstrap-typeahead.js")
+  (include-js "js/application.js"))
 
 (defpartial link []
   [:link {:rel "shortcut icon" :href "ico/favicon.ico"}]
@@ -35,11 +37,12 @@
   [:div.navbar.navbar-fixed-top
     [:div.navbar-inner
       [:div.container
-        [:a.btn.btn-navbar{ :data-toggle  "collapse", :data-target  ".nav-collapse"}]
+        [:a.btn.btn-navbar{ :data-toggle  "collapse", :data-target  ".nav-collapse"}
           [:span.icon-bar]
           [:span.icon-bar]
           [:span.icon-bar]
-        [:a.brand{:href  "/"} "Overtone" ]
+          ]
+        [:a.brand{:href  "/"} "Overtone"] 
         [:div.nav-collapse
           [:ul.nav
             [:li
@@ -47,13 +50,15 @@
             [:li
               [:a {:href  "/about"} "about"]]
             [:li
-              [:a {:href  "/docs"} "docs"]]
+              [:a {:href  "/ugen-list"} "docs"]]
             [:li
-              [:a {:href  "/download"} "download"]]
+              [:a {:href  "https://github.com/overtone/overtone"} "download"]]
+            [:li
+              [:a {:href  "https://github.com/overtone/overtone/tree/master/examples"} "examples"]]
             [:li
               [:a {:href  "/exhibition"} "exhibition"]]]]]]])
 
-(defpartial main-layout [& content]
+(defpartial layout [& content]
   (html5
     [:head
       [:title "overtone-site"] (css) (link)]
@@ -61,27 +66,3 @@
      (navbar)
      [:div.container content]
     (js)]))
-
-(defpartial layout [& content]
-  (main-layout
-    ; [:div.fluid-row 
-    ;   [:div.span9 
-    ;     [:br]
-    ;     [:a.span9 {:href "/"} [:img {:src "/img/overtone-banner-white.png" :style "margin-bottom: 10px;"}]]]]
-    ; [:div.fluid-row
-    ;   [:div.span9
-    ;     [:a.span1 {:href "/"} "Home"]
-    ;     [:a.span1 {:href "/exhibition"} "exhibition"]
-    ;     [:a.span1 {:href "/ugenlist"} "docs"]
-    ;     [:a.span1 {:href "/tutorials"} "tutorials"]
-    ;     [:a.span1 {:href "/https://github.com/overtone/overtone"} "download"]
-    ;     [:a.span1 {:href "/shop"} "shop"]
-    ;     [:a.span1 {:href "/about"} "about"]]]
-    [:div.fluid-row
-      [:div.container]
-      [:hr]
-      [:br]]
-      content
-    )
-  )
-
