@@ -16,9 +16,10 @@
 			[:br]
 			[:br]
 			[:br]
-			[:h1 "( use  'O v e r t o n e . l i v e )"]
+			[:h1 "( use 'overtone.live )"]
 			[:br]
 			[:p "Overtone is an open source audio environment being created to explore musical ideas from synthesis and sampling to instrument building, live-coding and collaborative jamming. We use the " (link-to "http://www.audiosynth.com/" "SuperCollider")  " synth server as the audio engine, with " (link-to "http://clojure.org/" "Clojure") " being used to develop the APIs and the application. Synthesizers, effects, analyzers and musical generators can be programmed in Clojure."]
-			[:p "Come and join the " (link-to "http://groups.google.com/group/overtone" "Overtone Google Group") " if you want to get involved in the project or have any questions about how you can use Overtone to make cool sounds and music."]]
+			[:p "Come and join the " (link-to "http://groups.google.com/group/overtone" "Overtone Google Group") " if you want to get involved in the project or have any questions about how you can use Overtone to make cool sounds and music."]
+			]
 				]))
 
