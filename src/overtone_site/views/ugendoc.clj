@@ -3,7 +3,6 @@
     :author "Sam Aaron, Jeff Rose & Jon Rose"}
      overtone-site.views.ugendoc
 (:require [overtone-site.views.common :as common]
-          [noir.content.getting-started]
           [clojure.repl :as repl]
           )
   (:use 
@@ -32,7 +31,7 @@
 (defpartial doc-row [l r]
   [:div.row-fluid
     [:div.span2 [:strong.pull-right l]]
-    [:div.span7 r]])
+    [:div.span9 r]])
 
 (defpage "/ugen-doc/:ugen-name" {:keys [ugen-name]}
 	(let [exists? (not (nil? (get-ugen ugen-name)))
@@ -44,8 +43,8 @@
                     [:p " "])]
         (if exists? 
           (do
-            [:div
-              (doc-row "name" [:h1#ugen-doc-title ugen-name])
+            [:div {:style "margin-top: 40px;"}
+              (doc-row "name" [:i [:h1#ugen-doc-title ugen-name]])
               [:br]
               (doc-row 
                 "syntax"
@@ -65,7 +64,7 @@
                           [:div.container
                             [:div.span2 {:style "margin-left: 0px;"}
                               [:p [:i#ugen-doc-title (str k)]]]
-                            [:div.span5
+                            [:div.span7
                               (str v)]])) 
                         (arg-doc-map ugen))
 
@@ -86,8 +85,8 @@
 
                 )
           (do 
-            [:div.span9
+            [:div.span9  {:style "margin-top: 100px;"}
               [:div.row-fluid.span2
                 [:p (str "Sorry we can't find the Ugen doc for " ugen-name ".")]
-                [:p "Back to " [:a {:href "/ugenlist"} "ugen list"]]]]))))))
+                [:p "Back to " [:a {:href "/ugen-list"} "ugen list"]]]]))))))
 

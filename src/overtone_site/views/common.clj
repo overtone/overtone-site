@@ -10,22 +10,22 @@
   (include-css "/css/styles.css"))
 
 (defpartial js [] 
-  (include-js "js/widgets.js")
-  (include-js "js/jquery.js")
-  (include-js "js/pretify.js")
-  (include-js "bootstrap/js/basic/bootstrap-transition.js")
-  (include-js "bootstrap/js/basic/bootstrap-alert.js")
-  (include-js "bootstrap/js/basic/bootstrap-modal.js")
-  (include-js "bootstrap/js/basic/bootstrap-dropdown.js")
-  (include-js "bootstrap/js/basic/bootstrap-scrollspy.js")
-  (include-js "bootstrap/js/basic/bootstrap-tab.js")
-  (include-js "bootstrap/js/basic/bootstrap-tooltip.js")
-  (include-js "bootstrap/js/basic/bootstrap-popover.js")
-  (include-js "bootstrap/js/basic/bootstrap-button.js")
-  (include-js "bootstrap/js/basic/bootstrap-collapse.js")
-  (include-js "bootstrap/js/basic/bootstrap-carousel.js")
-  (include-js "bootstrap/js/basic/bootstrap-typeahead.js")
-  (include-js "js/application.js"))
+  (include-js "/js/widgets.js")
+  (include-js "/js/jquery.js")
+  (include-js "/js/pretify.js")
+  (include-js "/bootstrap/js/bootstrap-transition.js")
+  (include-js "/bootstrap/js/bootstrap-alert.js")
+  (include-js "/bootstrap/js/bootstrap-modal.js")
+  (include-js "/bootstrap/js/bootstrap-dropdown.js")
+  (include-js "/bootstrap/js/bootstrap-scrollspy.js")
+  (include-js "/bootstrap/js/bootstrap-tab.js")
+  (include-js "/bootstrap/js/bootstrap-tooltip.js")
+  (include-js "/bootstrap/js/bootstrap-popover.js")
+  (include-js "/bootstrap/js/bootstrap-button.js")
+  (include-js "/bootstrap/js/bootstrap-collapse.js")
+  (include-js "/bootstrap/js/bootstrap-carousel.js")
+  (include-js "/bootstrap/js/bootstrap-typeahead.js")
+  (include-js "/js/application.js"))
 
 (defpartial link []
   [:link {:rel "shortcut icon" :href "ico/favicon.ico"}]
@@ -34,7 +34,7 @@
   [:link {:rel "apple-touch-icon" :sizes "114x114" :href "ico/apple-touch-icon-114x114.png"}])
 
 (defpartial navbar []
-  [:div.navbar.navbar-fixed-top
+  [:div.navbar.navbar-fixed-bottom
     [:div.navbar-inner
       [:div.container
         [:a.btn.btn-navbar{ :data-toggle  "collapse", :data-target  ".nav-collapse"}
@@ -58,11 +58,34 @@
             [:li
               [:a {:href  "/exhibition"} "exhibition"]]]]]]])
 
+
+(defpartial footer []
+  [:div.row-fluid
+  [:hr]
+
+    [:p 
+      (str "&copy " "Overtone")
+      (str " | ")
+      [:a {:href "/about"} "about"]
+      (str " | ")
+      [:a {:href "/ugen-list"} "docs"]
+      (str " | ")
+      [:a {:href "https://github.com/overtone/overtone"} "download"]
+      (str " | ")
+      [:a {:href "https://github.com/overtone/overtone/tree/master/examples"} "examples"]
+      (str " | ")
+      [:a {:href "/exhibition"} "exhibition"]
+      ]])
+
 (defpartial layout [& content]
   (html5
     [:head
       [:title "overtone-site"] (css) (link)]
     [:body
-     (navbar)
-     [:div.container content]
+      (navbar)
+      [:div.container {:style "margin-bottom: 150px"}
+        content
+        ; (footer)
+        ]
+        
     (js)]))
