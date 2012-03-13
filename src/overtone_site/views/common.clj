@@ -42,7 +42,7 @@
           [:span.icon-bar]
           [:span.icon-bar]
           ]
-        [:a.brand{:href  "/"} "Overtone"] 
+        [:a.brand{:href  "/"} "( o v e r t o n e )"] 
         [:div.nav-collapse
           [:ul.nav
             [:li

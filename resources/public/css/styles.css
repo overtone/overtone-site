@@ -10,3 +10,11 @@
 .hero-unit {
 	background-color: white;
 }
+
+
+.navbar-inner {
+	background-color: rgb(255, 127, 0);
+	background-image: -webkit-linear-gradient(top, #FF9F00, #FF8C00));
+	background-image: -o-linear-gradient(top, #FF9F00, #FF8C00));
+	background-image: linear-gradient(top, #FF9F00, #FF8C00));
+}

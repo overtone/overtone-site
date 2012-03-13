@@ -70,6 +70,7 @@
 							software transactional memory system and reactive Agent 
 							system that ensure clean, correct, multithreaded designs."]]
 					[:div.span3
+					[:br]
 					[:h3 "twitter"]
 				  	(include-js "js/twitter.js")]]))
 
