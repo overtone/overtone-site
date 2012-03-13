@@ -14,16 +14,16 @@
 			[:br]
 			[:br]
 			[:br]
-			[:center 
-				[:p "Overtone is an open source audio environment being created 
-					to explore musical ideas from synthesis and sampling to 
-					instrument building, live-coding and collaborative jamming. 
-					We use the SuperCollider synth server as the audio engine, 
-					with Clojure being used to develop the APIs and the application. 
-					Synthesizers, effects, analyzers and musical generators can be 
+			[:center
+				[:p "Overtone is an open source audio environment being created
+					to explore musical ideas from synthesis and sampling to
+					instrument building, live-coding and collaborative jamming.
+					We use the SuperCollider synth server as the audio engine,
+					with Clojure being used to develop the APIs and the application.
+					Synthesizers, effects, analyzers and musical generators can be
 					programmed in Clojure."]]]
 					[:hr]
-		[:div.span12
+		[:div.span12#exhibition-pane
 			[:div.row
 				[:div.span6
 
@@ -32,9 +32,10 @@
 			[:div.row
 				[:div.span6
 					[:center
-						[:img {:src "/img/creators.jpg"}]
-						[:p {:style "margin-bottom: 0px;"} "a link to this project"]
-						[:p "by Mr. Edison"]
+                        [:a {:href "http://www.chris-granger.com/2012/02/20/overtone-and-clojurescript/"}
+                         [:img {:src "/img/overtone-cljs-controller.png"}]
+                         [:p {:style "margin-bottom: 0px;"} "Overtone controller in ClojureScript."]]
+                         [:p "by Chris Granger"]
 						[:br]]]
 				[:div.span6
 					[:center
@@ -42,13 +43,13 @@
 						[:p {:style "margin-bottom: 0px;"}"a link to this project"]
 						[:p "by George Washington"]
 						[:br]]]]
-			[:div.row		
+			[:div.row
 				[:div.span6
 					[:center
 						[:img {:src "/img/maxplanck.jpg"}]
 						[:p {:style "margin-bottom: 0px;"}"a link to this project"]
 						[:p "by George Washington"]
-						[:br]]]			
+						[:br]]]
 				[:div.span6
 					[:center
 				[:img {:src "/img/soundmachines.jpg"}]
@@ -56,31 +57,31 @@
 				[:p "by Thomas Jefferson"]
 				[:br]]]]]
 
-
 			[:div.span7
-				[:p [:h3 "cross platform"]]
+				[:p [:h3 "Cross platform"]]
 				[:p "Overtone runs on Linux, OSX, and Windows. The only core dependency is Java. In most cases Overtone will provide a version of SuperCollider as part of its dependencies. However, you are also able to connect to an existing external version obtained here. Finally Linux users should have a version of the jack audio server installed"]
-				
-				[:p [:h3 "download overtone"]]
+
+				[:p [:h3 "Download"]]
 				[:p "You can clone the project with Git by running:"]
 				[:p "$ git clone git://github.com/overtone/overtone.git"]
 				[:p "You can also download the source package in a zip file."]
-				[:br]
-				[:div.row-fluid
-					[:div.span2 [:h3 "learn clojure"]]
-					[:div.span1[:a {:href "http://clojure.org/"} [:image {:src "img/clojure_logo.png" :style "position-top: 10px;"}]]]]
-				[:br]
 
-				[:p "Clojure is a dialect of Lisp, and shares with Lisp the 
-						code-as-data philosophy and a powerful macro system. 
-						Clojure is predominantly a functional programming language, 
-						and features a rich set of immutable, persistent data 
-						structures. When mutable state is needed, Clojure offers a 
-						software transactional memory system and reactive Agent 
-						system that ensure clean, correct, multithreaded designs."]]
+            [:h3 "Clojure"]
+                [:div#logo
+                 [:a {:href "http://clojure.org/"}
+                 [:image {:src "img/clojure_logo.png"}]]]
+
+				[:p "Clojure is a dialect of Lisp, and shares with Lisp the
+					 code-as-data philosophy and a powerful macro system.
+					 Clojure is predominantly a functional programming language,
+					 and features a rich set of immutable, persistent data
+					 structures. When mutable state is needed, Clojure offers a
+					 software transactional memory system and reactive Agent
+					 system that ensure clean, correct, multithreaded designs."]]
+
 			[:div.span3
 				[:br]
-				[:h3 "twitter"]
+				[:h3 "Twitter"]
 			  	(include-js "js/twitter.js")]))
 
 

@@ -18,3 +18,16 @@
 	background-image: -o-linear-gradient(top, #FF9F00, #FF8C00));
 	background-image: linear-gradient(top, #FF9F00, #FF8C00));
 }
+
+#logo {
+	position: relative;
+	float: left;
+	top: 10px;
+	height: 50px;
+	padding: 5px;
+}
+
+#exhibition-pane a, a:active, a:visited {
+	color: black;
+	text-decoration: none;
+}
