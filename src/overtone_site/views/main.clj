@@ -22,7 +22,8 @@
 					with Clojure being used to develop the APIs and the application.
 					Synthesizers, effects, analyzers and musical generators can be
 					programmed in Clojure."]]]
-					[:hr]
+        [:hr]
+
 		[:div.span12#exhibition-pane
 			[:div.row
 				[:div.span6
@@ -30,32 +31,34 @@
 					[:h3 "Exhibition"]
 					[:br]]]
 			[:div.row
-				[:div.span6
+				  [:div.span6
 					[:center
+						[:img {:src "/img/sam-conj11.png"}]
+						[:p {:style "margin-bottom: 0px;"} "Overtone at Clojure/Conj '11"]
+						[:p "by Sam Aaron"]
+						[:br]]]
+				[:div.span6
+                    [:center
                         [:a {:href "http://www.chris-granger.com/2012/02/20/overtone-and-clojurescript/"}
                          [:img {:src "/img/overtone-cljs-controller.png"}]
                          [:p {:style "margin-bottom: 0px;"} "Overtone controller in ClojureScript."]]
                          [:p "by Chris Granger"]
-						[:br]]]
-				[:div.span6
-					[:center
-						[:img {:src "/img/maxplanck.jpg"}]
-						[:p {:style "margin-bottom: 0px;"}"a link to this project"]
-						[:p "by George Washington"]
 						[:br]]]]
 			[:div.row
 				[:div.span6
 					[:center
-						[:img {:src "/img/maxplanck.jpg"}]
-						[:p {:style "margin-bottom: 0px;"}"a link to this project"]
-						[:p "by George Washington"]
+						[:a {:href "https://gist.github.com/2018154"}
+                         [:img {:src "/img/code-bar.png"}]
+                         [:p {:style "margin-bottom: 0px;"} "A short piano piece."]]
+                        [:p "by Chris Ford"]
 						[:br]]]
 				[:div.span6
 					[:center
 				[:img {:src "/img/soundmachines.jpg"}]
 				[:p {:style "margin-bottom: 0px;"}"a link to this project"]
 				[:p "by Thomas Jefferson"]
-				[:br]]]]]
+				[:br]]]
+    ]]
 
 			[:div.span7
 				[:p [:h3 "Cross platform"]]

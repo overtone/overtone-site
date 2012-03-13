@@ -31,3 +31,8 @@
 	color: black;
 	text-decoration: none;
 }
+
+#exhibition-pane > img {
+	width: 233px;
+	height: 72px;
+}
